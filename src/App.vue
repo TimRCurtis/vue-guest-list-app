@@ -8,20 +8,20 @@
 
       <div class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <div class="flex items-center justify-between">
-            <span class="text-sm font-light text-gray-800 dark:text-gray-400" v-bind:class="formSubmitClass">{{ event.eventDate }}</span>
+            <span class="text-sm font-light text-gray-800 dark:text-gray-400" :class="formSubmitClass">{{ event.eventDate }}</span>
         </div>
 
-        <div class="" v-bind:styles="appStyles">
+        <div class="" :styles="appStyles">
             <h4 class="text-2xl font-bold text-gray-700 dark:text-white">{{ event.eventTitle }}</h4>
             <p class="mt-2 text-gray-600 dark:text-gray-300">{{ event.eventDescription }}</p>
             <p class="mt-2 text-gray-600 dark:text-gray-300">Add your name to the guest list for exclusive offers:</p>
 
             <div class="flex items-center justify-center pb-6 md:py-0 md:w-1/2 mt-2">
-              <form v-on:submit.prevent="formSubmitted">
+              <form @submit.prevent="formSubmitted">
                 <div class="flex flex-col overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row">
                   <input class="px-6 py-3 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent" type="text" placeholder="Jane Doe" v-model="newNameText">
                   
-                  <button v-bind:class="formSubmitClassBtn" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none" >Submit</button>
+                  <button :class="formSubmitClassBtn" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none" >Submit</button>
                 </div>
               </form>
             </div>
