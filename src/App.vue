@@ -35,7 +35,7 @@
 
         <div v-if="guestName.length > 0">
           <!-- eslint-disable-next-line -->
-          <div class="mt-2 mr-2 inline-flex items-center justify-center text-base border-2 border-green-200 text-green-800 dark:text-white bg-green-400 rounded-md px-4 py-2" v-for="name in guestName">{{ name }}</div>
+          <div class="mt-2 mr-2 inline-flex items-center justify-center text-base border-2 border-green-200 text-green-800 dark:text-white bg-green-400 rounded-md px-4 py-2" v-for="name in guestName">{{ name.toLowerCase() }}</div>
         </div>
 
         <div class="mt-2" v-else>
@@ -61,7 +61,7 @@ export default {
           eventDescription: "It's back! This years summer festival will be in the beautiful countryside featuring our best line up ever!"
         },
         newNameText: '',
-        guestName: [],
+        guestName: ['Sarah', 'Lynn', 'Clayton'],
         formSubmitClass: "",
         formSubmitClassBtn: "",
         appStyles: {
