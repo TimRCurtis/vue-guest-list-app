@@ -12,9 +12,9 @@
         </div>
 
         <div class="" :styles="appStyles">
-            <h4 class="text-2xl font-bold text-gray-700 dark:text-white">{{ event.eventTitle }}</h4>
+            <h4 class="text-2xl font-bold text-gray-700 dark:text-white" v-text="event.eventTitle"></h4>
             <p class="mt-2 text-gray-600 dark:text-gray-300">{{ event.eventDescription }}</p>
-            <p class="mt-2 text-gray-600 dark:text-gray-300">Add your name to the guest list for exclusive offers:</p>
+            <p class="mt-2 text-gray-600 dark:text-gray-300" v-html="event.signUpText"></p>
 
             <div class="flex items-center justify-center pb-6 md:py-0 md:w-1/2 mt-2">
               <form @submit.prevent="formSubmitted">
@@ -57,6 +57,7 @@ export default {
       event: {
           eventDate: 'August 14th- 16th',
           eventTitle: 'Summer Festival!',
+          signUpText: 'Add your name to the guest list for <em>exclusive</em> offers:',
           eventDescription: "It's back! This years summer festival will be in the beautiful countryside featuring our best line up ever!"
         },
         newNameText: '',
