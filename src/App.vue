@@ -8,7 +8,7 @@
 
       <div class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <div class="flex items-center justify-between">
-            <span class="text-sm font-light text-gray-800 dark:text-gray-400" :class="formSubmitClass">{{ event.eventDate }}</span>
+            <span class="text-sm font-light text-gray-800 dark:text-gray-400">{{ event.eventDate }}</span>
         </div>
 
         <div class="" :styles="appStyles">
@@ -21,7 +21,7 @@
                 <div class="flex flex-col overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row">
                   <input class="px-6 py-3 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent" type="text" placeholder="Jane Doe" v-model="newNameText">
                   
-                  <button :class="formSubmitClassBtn" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none" >Submit</button>
+                  <button class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none" >Submit</button>
                 </div>
               </form>
             </div>
@@ -62,8 +62,6 @@ export default {
         },
         newNameText: '',
         guestName: ['Sarah', 'Lynn', 'Clayton'],
-        formSubmitClass: "",
-        formSubmitClassBtn: "",
         appStyles: {
           marginTop: '0.5rem'
         }
@@ -74,8 +72,6 @@ export default {
       if(this.newNameText.length > 0) {
         this.guestName.push(this.newNameText)
         this.newNameText = ''
-        this.formSubmitClass = "text-green-600 font-bold"
-        this.formSubmitClassBtn = "text-green-200 bg-green-500"
       }
     }
   }
