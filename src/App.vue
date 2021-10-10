@@ -11,7 +11,7 @@
             <span class="text-sm font-light text-gray-800 dark:text-gray-400" v-bind:class="formSubmitClass">{{ event.eventDate }}</span>
         </div>
 
-        <div class="mt-2">
+        <div class="" v-bind:styles="appStyles">
             <h4 class="text-2xl font-bold text-gray-700 dark:text-white">{{ event.eventTitle }}</h4>
             <p class="mt-2 text-gray-600 dark:text-gray-300">{{ event.eventDescription }}</p>
             <p class="mt-2 text-gray-600 dark:text-gray-300">Add your name to the guest list for exclusive offers:</p>
@@ -21,7 +21,7 @@
                 <div class="flex flex-col overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row">
                   <input class="px-6 py-3 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent" type="text" placeholder="Jane Doe" v-model="newNameText">
                   
-                  <button class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none" >Submit</button>
+                  <button v-bind:class="formSubmitClassBtn" class="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none" >Submit</button>
                 </div>
               </form>
             </div>
@@ -61,7 +61,11 @@ export default {
         },
         newNameText: '',
         guestName: [],
-        formSubmitClass: ""
+        formSubmitClass: "",
+        formSubmitClassBtn: "",
+        appStyles: {
+          marginTop: '0.5rem'
+        }
     }
   },
   methods: {
@@ -70,6 +74,7 @@ export default {
         this.guestName.push(this.newNameText)
         this.newNameText = ''
         this.formSubmitClass = "text-green-600 font-bold"
+        this.formSubmitClassBtn = "text-green-200 bg-green-500"
       }
     }
   }
