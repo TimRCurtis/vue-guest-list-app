@@ -30,7 +30,7 @@
 
       <div class="mt-10 max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-lg dark:bg-gray-800">
         <div class="flex items-center justify-between">
-            <span class="text-sm font-light text-gray-800 dark:text-gray-400">Attending ({{ guestName.length }})</span>
+            <span class="text-sm font-light text-gray-800 dark:text-gray-400">Attending ({{ guestName.length }} / {{ eventCapacity }})</span>
         </div>
         <br>
         <div class="relative pt-1">
