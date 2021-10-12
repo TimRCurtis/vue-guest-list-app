@@ -41,7 +41,7 @@
 
         <div v-if="guestName.length > 0">
           <!-- eslint-disable-next-line -->
-          <div class="mt-2 mr-2 inline-flex items-center justify-center text-base border-2 border-green-200 text-green-800 dark:text-white bg-green-400 rounded-md px-4 py-2" v-for="name in guestName">{{ name.toLowerCase() }}</div>
+          <div class="mt-2 mr-2 inline-flex items-center justify-center text-base border-2 border-green-200 text-green-800 dark:text-white bg-green-400 rounded-md px-4 py-2" v-for="name in sortNames">{{ name.toLowerCase() }}</div>
         </div>
 
         <div class="mt-2" v-else>
@@ -82,6 +82,12 @@ export default {
         this.newNameText = ''
         this.eventCapacityPercentage = this.guestName.length / (this.eventCapacity / 100)
       }
+    }
+  },
+  computed: {
+    sortNames: function() {
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      return this.guestName.sort()
     }
   }
 }
