@@ -89,6 +89,12 @@ export default {
       // eslint-disable-next-line vue/no-side-effects-in-computed-properties
       return this.guestName.sort()
     }
+  },
+  watch: {
+    // eslint-disable-next-line no-unused-vars
+    guestName: function(data) {
+      console.log('Watch triggered')
+    }
   }
 }
 </script>
