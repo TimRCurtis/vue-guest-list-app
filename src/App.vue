@@ -41,7 +41,7 @@
 
         <div v-if="guestName.length > 0">
           <!-- eslint-disable-next-line -->
-          <div class="mt-2 mr-2 inline-flex items-center justify-center text-base border-2 border-green-200 text-green-800 dark:text-white bg-green-400 rounded-md px-4 py-2" v-for="name in sortNames">{{ name.toLowerCase() }}</div>
+          <div class="mt-2 mr-2 inline-flex items-center justify-center text-base border-2 border-green-200 text-green-800 dark:text-white bg-green-400 rounded-md px-4 py-2" v-for="name in sortNames">{{ name | formatName }}</div>
         </div>
 
         <div class="mt-2" v-else>
@@ -94,6 +94,11 @@ export default {
     // eslint-disable-next-line no-unused-vars
     guestName: function(data) {
       console.log('Watch triggered')
+    }
+  },
+  filters: {
+    formatName: function(value) {
+      return value.slice(0, 1).toUpperCase() + value.slice(1).toLowerCase()
     }
   }
 }
